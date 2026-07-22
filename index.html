@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracetamol Calculator</title>
+</head>
+<body>
+
+    <h2>Paracetamol Dosage Calculator</h2>
+    <p>Calculate the appropriate dose based on child's weight:</p>
+    
+    <label>Child's Weight (kg): </label>
+    <input type="number" id="weight" placeholder="e.g. 10">
+    <br><br>
+
+    <label>Concentration: </label>
+    <select id="concentration">
+        <option value="120">120 mg / 5 ml</option>
+        <option value="250">250 mg / 5 ml</option>
+    </select>
+    <br><br>
+
+    <button onclick="calculate()">Calculate</button>
+    <br><br>
+
+    <h3 id="result" style="color: blue;"></h3>
+
+    <script>
+        function calculate() {
+            var w = parseFloat(document.getElementById('weight').value);
+            var c = parseFloat(document.getElementById('concentration').value);
+            
+            if (w > 0) {
+                var dose = (w * 15 * 5) / c;
+                document.getElementById('result').innerText = "Dose: " + dose.toFixed(1) + " ml";
+            } else {
+                alert("Please enter a valid weight");
+            }
+        }
+    </script>
+
+</body>
+</html>
