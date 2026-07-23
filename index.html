@@ -31,7 +31,7 @@
             var w = parseFloat(document.getElementById('weight').value);
             var c = parseFloat(document.getElementById('concentration').value);
             
-            if (w > 0) {
+            if if (!weightInput || isNaN(weight) || weight < 0.5 || weight > 60) {
                 var dose = (w * 15 * 5) / c;
                 document.getElementById('result').innerText = "Dose: " + dose.toFixed(1) + " ml";
             } else {
